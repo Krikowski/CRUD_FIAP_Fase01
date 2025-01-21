@@ -1,0 +1,6 @@
+@Crud_FIAP_Debora_Krikowski_HostAddress = http:localhost:5150
+
+GET {{Crud_FIAP_Debora_Krikowski_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

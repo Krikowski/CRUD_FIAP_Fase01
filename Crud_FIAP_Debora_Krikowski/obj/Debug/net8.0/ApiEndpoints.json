@@ -1,0 +1,87 @@
+[
+  {
+    "ContainingType": "Crud_FIAP_Debora_Krikowski.Controllers.ContatosController",
+    "Method": "Create",
+    "RelativePath": "api/Contatos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contato",
+        "Type": "Crud_FIAP_Debora_Krikowski.Models.Contato",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Crud_FIAP_Debora_Krikowski.Controllers.ContatosController",
+    "Method": "GetAll",
+    "RelativePath": "api/Contatos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ddd",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Crud_FIAP_Debora_Krikowski.Controllers.ContatosController",
+    "Method": "GetById",
+    "RelativePath": "api/Contatos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Crud_FIAP_Debora_Krikowski.Controllers.ContatosController",
+    "Method": "Update",
+    "RelativePath": "api/Contatos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "contato",
+        "Type": "Crud_FIAP_Debora_Krikowski.Models.Contato",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Crud_FIAP_Debora_Krikowski.Controllers.ContatosController",
+    "Method": "Delete",
+    "RelativePath": "api/Contatos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Crud_FIAP_Debora_Krikowski.props" />
+</Project>
