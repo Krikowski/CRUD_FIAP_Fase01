@@ -48,7 +48,7 @@ namespace Crud_FIAP_Debora_Krikowski.Data
                     .HasMaxLength(3) // Limite de caracteres
                     .HasColumnType("nvarchar(3)");
 
-                // Índice único para o campo "Email" (opcional)
+                // Índice único para o campo "Email" 
                 entity.HasIndex(c => c.Email)
                     .IsUnique()
                     .HasDatabaseName("IX_Contato_Email");
