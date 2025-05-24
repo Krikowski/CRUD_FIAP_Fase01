@@ -8277,11 +8277,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\debor\\FIAP\\VISUAL_STUDEO\\Crud_FIAP_Tests\\Crud_FIAP_Tests.csproj",
+      "projectUniqueName": "C:\\Users\\debor\\FIAP\\CRUD_FIAP_Fase01\\Crud_FIAP_Tests\\Crud_FIAP_Tests.csproj",
       "projectName": "Crud_FIAP_Tests",
-      "projectPath": "C:\\Users\\debor\\FIAP\\VISUAL_STUDEO\\Crud_FIAP_Tests\\Crud_FIAP_Tests.csproj",
+      "projectPath": "C:\\Users\\debor\\FIAP\\CRUD_FIAP_Fase01\\Crud_FIAP_Tests\\Crud_FIAP_Tests.csproj",
       "packagesPath": "C:\\Users\\debor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\debor\\FIAP\\VISUAL_STUDEO\\Crud_FIAP_Tests\\obj\\",
+      "outputPath": "C:\\Users\\debor\\FIAP\\CRUD_FIAP_Fase01\\Crud_FIAP_Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\debor\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8299,8 +8299,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\debor\\FIAP\\VISUAL_STUDEO\\Crud_FIAP_Debora_Krikowski\\Crud_FIAP_Debora_Krikowski.csproj": {
-              "projectPath": "C:\\Users\\debor\\FIAP\\VISUAL_STUDEO\\Crud_FIAP_Debora_Krikowski\\Crud_FIAP_Debora_Krikowski.csproj"
+            "C:\\Users\\debor\\FIAP\\CRUD_FIAP_Fase01\\Crud_FIAP_Debora_Krikowski\\Crud_FIAP_Debora_Krikowski.csproj": {
+              "projectPath": "C:\\Users\\debor\\FIAP\\CRUD_FIAP_Fase01\\Crud_FIAP_Debora_Krikowski\\Crud_FIAP_Debora_Krikowski.csproj"
             }
           }
         }

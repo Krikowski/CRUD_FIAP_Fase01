@@ -39,7 +39,7 @@ namespace Crud_FIAP_Tests.Tests
         }
 
         //Validação POST - Dados iniciais
-        [Fact] //teste de unidade independente - sem parâmetros
+        [Fact, Trait("Category", "Integration")] //teste de unidade independente - sem parâmetros
         public async Task Create_ValidContato_ReturnsCreatedAtActionResult_Single()
         {
             // Arrange
@@ -72,7 +72,7 @@ namespace Crud_FIAP_Tests.Tests
         }
 
         //Validação POST - Dados duplicados
-        [Fact]
+        [Fact, Trait("Category", "Integration")]
         public async Task Create_ContatoComEmailExistente_ReturnsBadRequest()
         {
             // Adiciona contato 'limpo'
@@ -107,7 +107,7 @@ namespace Crud_FIAP_Tests.Tests
 
 
         // Teste PUT - Alterando Nome Inválido
-        [Fact]
+        [Fact, Trait("Category", "Integration")]
         public async Task Update_ValidContato_ReturnsBadRequest()
         {
             // Arrange
@@ -141,7 +141,7 @@ namespace Crud_FIAP_Tests.Tests
         }
 
         // Teste PUT - Alterando um ID que não existe
-        [Fact]
+        [Fact, Trait("Category", "Integration")]
         public async Task Update_InvalidContatoId_ReturnsNotFound()
         {
            
@@ -174,7 +174,7 @@ namespace Crud_FIAP_Tests.Tests
         }
 
         // Teste DELETE - deletando com sucesso um contato
-        [Fact]
+        [Fact, Trait("Category", "Integration")]
         public async Task Delete_ValidId_ReturnsOkResult()
         {
             
@@ -207,7 +207,7 @@ namespace Crud_FIAP_Tests.Tests
         }
 
         // TESTE DELETE - ID inválido
-        [Fact]
+        [Fact, Trait("Category", "Integration")]
         public async Task Delete_InvalidId_ReturnsBadRequest()
         {
             // Arrange
@@ -221,7 +221,7 @@ namespace Crud_FIAP_Tests.Tests
         }
 
         //Teste GET - Todos os contatos
-        [Fact]
+        [Fact, Trait("Category", "Integration")]
         public async Task GetAll_ValidDDD_ReturnsOkResult()
         {
             var controller = new ContatosController(_context, _cache);

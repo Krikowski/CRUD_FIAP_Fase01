@@ -1,0 +1,12 @@
+Crud_FIAP_Debora_Krikowski/.vs/Crud_FIAP_Debora_Krikowski/FileContentIndex/1df99de3-0049-4809-9eeb-aa4ad3daeaaa.vsidx
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build
+bin/
+obj/
+
+# Outros arquivos temporários
+*.vsidx

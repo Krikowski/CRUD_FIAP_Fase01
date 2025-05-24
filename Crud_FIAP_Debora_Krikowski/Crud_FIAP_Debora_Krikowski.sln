@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crud_FIAP_Debora_Krikowski", "Crud_FIAP_Debora_Krikowski.csproj", "{54FC1516-47A0-4748-A28A-EF74AD24DABD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud_FIAP_Tests", "..\Crud_FIAP_Tests\Crud_FIAP_Tests.csproj", "{4FB55BF5-A457-41B4-A9E4-AD495DFBDB04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crud_FIAP_Tests", "..\Crud_FIAP_Tests\Crud_FIAP_Tests.csproj", "{4FB55BF5-A457-41B4-A9E4-AD495DFBDB04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
