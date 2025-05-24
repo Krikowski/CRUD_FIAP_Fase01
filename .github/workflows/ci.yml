@@ -21,7 +21,8 @@ jobs:
       run: dotnet restore Crud_FIAP_Debora_Krikowski/Crud_FIAP_Debora_Krikowski.sln
 
     - name: Buildar o projeto
-      run: dotnet build Crud_FIAP_Debora_Krikowski/Crud_FIAP_Debora_Krikowski.sln --no-restore
+      run: dotnet build Crud_FIAP_Debora_Krikowski/Crud_FIAP_Debora_Krikowski.sln --no-restore --verbosity detailed
+
 
     - name: Executar testes
       run: dotnet test Crud_FIAP_Debora_Krikowski/Crud_FIAP_Debora_Krikowski.sln --no-build --verbosity normal
