@@ -27,7 +27,7 @@ jobs:
       run: dotnet build Crud_FIAP_Debora_Krikowski/Crud_FIAP_Debora_Krikowski.sln --no-restore --verbosity detailed 2>&1 | tee build.log
 
     - name: Publicar log do build
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2
       with:
         name: build-log
         path: build.log
