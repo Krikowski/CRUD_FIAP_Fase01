@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Crud_FIAP_Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8813c6c28c5b208faba33077cf79eb8b24f3c9f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+119dbdb71b130e60f5955f123381566f9ea4eebc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Crud_FIAP_Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Crud_FIAP_Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
