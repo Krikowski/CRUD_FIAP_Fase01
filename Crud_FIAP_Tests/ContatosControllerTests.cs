@@ -9,17 +9,16 @@ using System.Collections.Generic;
 using System;
 using Newtonsoft.Json.Linq;
 using Microsoft.Extensions.Caching.Memory;
+using Crud_FIAP_Debora_Krikowski.Services;
 
-namespace Crud_FIAP_Tests.Tests
-{
-    public class ContatosControllerTests
-    {
+
+namespace Crud_FIAP_Tests.Tests {
+    public class ContatosControllerTests {
         private readonly ApplicationDbContext _context;
         private readonly IMemoryCache _cache;
         private readonly ContatosController _controller;
 
-        public ContatosControllerTests()
-        {
+        public ContatosControllerTests() {
             // Cria a instância do ApplicationDbContext com um banco de dados em memória
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
                 .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) // Banco único por teste
@@ -40,17 +39,15 @@ namespace Crud_FIAP_Tests.Tests
 
         //Validação POST - Dados iniciais
         [Fact, Trait("Category", "Integration")] //teste de unidade independente - sem parâmetros
-        public async Task Create_ValidContato_ReturnsCreatedAtActionResult_Single()
-        {
+        public async Task Create_ValidContato_ReturnsCreatedAtActionResult_Single() {
             // Arrange
             // Criação da instância do controller com o _context e _cache
             var controller = new ContatosController(_context, _cache);
 
             //criação do objeto válido
-            var contato = new Contato
-            {
+            var contato = new Contato {
                 Nome = "Novo Contato",
-                Email = "novocontato@example.com", 
+                Email = "novocontato@example.com",
                 Telefone = "11987654321",
                 DDD = "11"
             };
@@ -73,13 +70,11 @@ namespace Crud_FIAP_Tests.Tests
 
         //Validação POST - Dados duplicados
         [Fact, Trait("Category", "Integration")]
-        public async Task Create_ContatoComEmailExistente_ReturnsBadRequest()
-        {
+        public async Task Create_ContatoComEmailExistente_ReturnsBadRequest() {
             // Adiciona contato 'limpo'
-            var contatoExistente = new Contato
-            {
+            var contatoExistente = new Contato {
                 Nome = "Contato Existente",
-                Email = "testuser@example.com", 
+                Email = "testuser@example.com",
                 Telefone = "11987654321",
                 DDD = "11"
             };
@@ -89,10 +84,9 @@ namespace Crud_FIAP_Tests.Tests
             await _context.SaveChangesAsync();
 
             //e-mail duplicado
-            var novoContato = new Contato
-            {
+            var novoContato = new Contato {
                 Nome = "Novo Contato",
-                Email = "testuser@example.com", 
+                Email = "testuser@example.com",
                 Telefone = "11912345678",
                 DDD = "11"
             };
@@ -108,13 +102,11 @@ namespace Crud_FIAP_Tests.Tests
 
         // Teste PUT - Alterando Nome Inválido
         [Fact, Trait("Category", "Integration")]
-        public async Task Update_ValidContato_ReturnsBadRequest()
-        {
+        public async Task Update_ValidContato_ReturnsBadRequest() {
             // Arrange
             var controller = new ContatosController(_context, _cache);
-            var contatoExistente = new Contato
-            {
-                Nome = "Contato Atualizado",  
+            var contatoExistente = new Contato {
+                Nome = "Contato Atualizado",
                 Email = "updated@example.com",
                 Telefone = "11987654321",
                 DDD = "11"
@@ -125,12 +117,12 @@ namespace Crud_FIAP_Tests.Tests
             await _context.SaveChangesAsync();
 
             // Simula um erro de validação, alterando o nome para vazio
-            contatoExistente.Nome = "";  
+            contatoExistente.Nome = "";
 
             var result = await controller.Update(contatoExistente.Id, contatoExistente);
 
             var badRequestResult = result as BadRequestObjectResult;
-            Assert.NotNull(badRequestResult); 
+            Assert.NotNull(badRequestResult);
 
             // Verifica se o valor retornado não é nulo
             Assert.NotNull(badRequestResult.Value);
@@ -142,12 +134,10 @@ namespace Crud_FIAP_Tests.Tests
 
         // Teste PUT - Alterando um ID que não existe
         [Fact, Trait("Category", "Integration")]
-        public async Task Update_InvalidContatoId_ReturnsNotFound()
-        {
-           
+        public async Task Update_InvalidContatoId_ReturnsNotFound() {
+
             var controller = new ContatosController(_context, _cache);
-            var contatoExistente = new Contato
-            {
+            var contatoExistente = new Contato {
                 Nome = "Contato para Atualizar",
                 Email = "toUpdate@example.com",
                 Telefone = "11987654321",
@@ -157,8 +147,7 @@ namespace Crud_FIAP_Tests.Tests
             _context.Contatos.Add(contatoExistente);
             await _context.SaveChangesAsync();
 
-            var contatoAlterado = new Contato
-            {
+            var contatoAlterado = new Contato {
                 Id = 999, // ID inválido
                 Nome = "Nome Alterado",
                 Email = "invalid@example.com",
@@ -175,11 +164,9 @@ namespace Crud_FIAP_Tests.Tests
 
         // Teste DELETE - deletando com sucesso um contato
         [Fact, Trait("Category", "Integration")]
-        public async Task Delete_ValidId_ReturnsOkResult()
-        {
-            
-            var contatoExistente = new Contato
-            {
+        public async Task Delete_ValidId_ReturnsOkResult() {
+
+            var contatoExistente = new Contato {
                 Nome = "Contato para Deletar",
                 Email = "todelete@example.com",
                 Telefone = "11987654321",
@@ -208,8 +195,7 @@ namespace Crud_FIAP_Tests.Tests
 
         // TESTE DELETE - ID inválido
         [Fact, Trait("Category", "Integration")]
-        public async Task Delete_InvalidId_ReturnsBadRequest()
-        {
+        public async Task Delete_InvalidId_ReturnsBadRequest() {
             // Arrange
             var controller = new ContatosController(_context, _cache);
 
@@ -222,8 +208,7 @@ namespace Crud_FIAP_Tests.Tests
 
         //Teste GET - Todos os contatos
         [Fact, Trait("Category", "Integration")]
-        public async Task GetAll_ValidDDD_ReturnsOkResult()
-        {
+        public async Task GetAll_ValidDDD_ReturnsOkResult() {
             var controller = new ContatosController(_context, _cache);
 
             // Adiciona contatos de teste
@@ -241,6 +226,27 @@ namespace Crud_FIAP_Tests.Tests
 
             Assert.True(contatos.Count > 0);
         }
+
+        [Fact, Trait("Category", "Integration")]
+        public async Task Service_CreateContato_SavesInDatabase() {
+            // Arrange
+            var service = new ContatoService(_context);
+            var contato = new Contato {
+                Nome = "Teste Serviço",
+                Email = "servico@example.com",
+                Telefone = "11987654321",
+                DDD = "11"
+            };
+
+
+            // Act
+            await service.CreateContatoAsync(contato);
+
+            // Assert
+            var contatoSalvo = await _context.Contatos.FirstOrDefaultAsync(c => c.Email == "servico@example.com");
+            Assert.NotNull(contatoSalvo);
+        }
+
 
     }
 }
