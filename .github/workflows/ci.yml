@@ -27,5 +27,6 @@ jobs:
       run: dotnet build Crud_FIAP_Debora_Krikowski/Crud_FIAP_Debora_Krikowski.sln --no-restore --verbosity detailed 2>&1 | tee build.log
 
     - name: Executar testes
-      run: dotnet test Crud_FIAP_Tests/Crud_FIAP_Tests.csproj --verbosity normal
+      run: dotnet test Crud_FIAP_Tests/Crud_FIAP_Tests.csproj --verbosity detailed --logger "console;verbosity=detailed"
+
 
