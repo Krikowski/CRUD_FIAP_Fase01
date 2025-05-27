@@ -38,7 +38,7 @@ namespace Crud_FIAP_Tests.Tests {
         }
 
         //Validação POST - Dados iniciais
-        [Fact, Trait("Category", "Integration")] //teste de unidade independente - sem parâmetros
+        [Fact, Trait("Category", "Unit")] //teste de unidade independente - sem parâmetros
         public async Task Create_ValidContato_ReturnsCreatedAtActionResult_Single() {
             // Arrange
             // Criação da instância do controller com o _context e _cache
@@ -69,7 +69,7 @@ namespace Crud_FIAP_Tests.Tests {
         }
 
         //Validação POST - Dados duplicados
-        [Fact, Trait("Category", "Integration")]
+        [Fact, Trait("Category", "Unit")]
         public async Task Create_ContatoComEmailExistente_ReturnsBadRequest() {
             // Adiciona contato 'limpo'
             var contatoExistente = new Contato {
@@ -101,7 +101,7 @@ namespace Crud_FIAP_Tests.Tests {
 
 
         // Teste PUT - Alterando Nome Inválido
-        [Fact, Trait("Category", "Integration")]
+        [Fact, Trait("Category", "Unit")]
         public async Task Update_ValidContato_ReturnsBadRequest() {
             // Arrange
             var controller = new ContatosController(_context, _cache);
@@ -133,7 +133,7 @@ namespace Crud_FIAP_Tests.Tests {
         }
 
         // Teste PUT - Alterando um ID que não existe
-        [Fact, Trait("Category", "Integration")]
+        [Fact, Trait("Category", "Unit")]
         public async Task Update_InvalidContatoId_ReturnsNotFound() {
 
             var controller = new ContatosController(_context, _cache);
@@ -163,7 +163,7 @@ namespace Crud_FIAP_Tests.Tests {
         }
 
         // Teste DELETE - deletando com sucesso um contato
-        [Fact, Trait("Category", "Integration")]
+        [Fact, Trait("Category", "Unit")]
         public async Task Delete_ValidId_ReturnsOkResult() {
 
             var contatoExistente = new Contato {
@@ -207,7 +207,7 @@ namespace Crud_FIAP_Tests.Tests {
         }
 
         //Teste GET - Todos os contatos
-        [Fact, Trait("Category", "Integration")]
+        [Fact, Trait("Category", "Unit")]
         public async Task GetAll_ValidDDD_ReturnsOkResult() {
             var controller = new ContatosController(_context, _cache);
 
@@ -227,7 +227,7 @@ namespace Crud_FIAP_Tests.Tests {
             Assert.True(contatos.Count > 0);
         }
 
-        [Fact, Trait("Category", "Integration")]
+        [Fact, Trait("Category", "Unit")]
         public async Task Service_CreateContato_SavesInDatabase() {
             // Arrange
             var service = new ContatoService(_context);

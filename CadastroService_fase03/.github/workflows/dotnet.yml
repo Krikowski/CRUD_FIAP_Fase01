@@ -1,0 +1,30 @@
+name: .NET CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+
+    - name: Instalar o .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restaurar dependências
+      run: dotnet restore
+
+    - name: Compilar o projeto
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Executar os testes
+      run: dotnet test --no-restore --verbosity normal
